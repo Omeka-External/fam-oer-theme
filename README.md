@@ -80,7 +80,7 @@ Finally add 3 blocks to the Group:
 1. Asset block: The image.
 2. HTML block: The content that will show up in the animated caption on hover the image. It must have an `<h4>` heading in order for it to be previewed over the image.
 3. HTML block: Another HTML block just to add the link. It will be rendered as an arrow button.
-<img width="1438" alt="Screenshot 2025-04-20 at 10 10 29 PM" src="https://github.com/user-attachments/assets/a6242227-7cdb-416a-ac9b-1af197920f63" />
+<img width="1529" height="542" alt="image" src="https://github.com/user-attachments/assets/eea5312d-b7cf-4693-9759-acc9ef70eedc" />
 
 ### Colored Captions
 
@@ -88,7 +88,7 @@ Captions in blocks like "**Asset**", "**Item Carousel**", and "**Media Embed**" 
 
 You can customize this color (yellow or black) by assigning either `caption-yellow` or `caption-black` class to the block in the "Block layout configuration" panel.
 
-<img width="1443" alt="Screenshot 2025-04-20 at 9 33 59 PM" src="https://github.com/user-attachments/assets/30a5e0bd-be10-4a23-8be3-f393fab5a355" />
+<img width="1529" height="461" alt="image" src="https://github.com/user-attachments/assets/239da011-dc05-473c-bc7a-7cec92a0e23c" />
 
 ### Group blocks with color background
 

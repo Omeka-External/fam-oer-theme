@@ -70,7 +70,7 @@ This theme offers 5 different page templates:
 
 ### Assets with animated captions
 
-
+![animated-captions](https://github.com/user-attachments/assets/4d6e735e-aa27-4839-8017-ff0a7568ea95)
 
 You can add assets whose captions show up with a transition effect over the asset when you hover them.
 

@@ -1,0 +1,63 @@
+@use "../abstracts/mixins/mixins";
+
+.alignleft {
+    /*rtl:ignore*/
+    float: left;
+
+    /*rtl:ignore*/
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.alignright {
+    /*rtl:ignore*/
+    float: right;
+
+    /*rtl:ignore*/
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.aligncenter {
+    clear: both;
+    @include mixins.center-block;
+    margin-bottom: 1.5em;
+}
+
+.alignfull {
+    margin: 0 0 1.5rem;
+    max-width: 100%;
+}
+
+.alignwide {
+    margin: 0 calc(25% - 25vw) 1.5rem;
+    max-width: 100vw;
+}
+
+.alignnarrow {
+    @include mixins.center-block;
+    max-width: 1024px;
+    width: 100%;
+}
+
+.textleft {
+    text-align: left;
+}
+
+.textright {
+    text-align: right;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+.vertical-align-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.w-100 {
+    width: 100%;
+}

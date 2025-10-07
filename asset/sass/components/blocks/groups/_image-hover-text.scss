@@ -1,0 +1,191 @@
+@use "../../../abstracts/mixins/mixins";
+@use "../../../abstracts/variables/breakpoints";
+@use "../../../abstracts/variables/colors";
+
+.image-hover-text {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    gap: 0 !important;
+
+    @media (min-width: breakpoints.$lg) {
+        grid-column-end: span 6 !important;
+        grid-column-start: auto !important;
+    }
+
+    &:hover {
+        .block-html {
+            background-color: rgba(colors.$color__secondary, 0.95);
+            bottom: 0 !important;
+
+            .heading {
+                background-color: transparent;
+            }
+
+            p {
+                opacity: 1;
+            }
+        }
+    }
+
+    .block-asset {
+        margin: 0 !important;
+        font-size: 0;
+
+        .asset {
+            display: block;
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 300px !important;
+
+            @media (min-width: breakpoints.$lg) {
+                height: 400px !important;
+            }
+        }
+    }
+
+    .block-html {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin: 0 !important;
+        padding: 30px 90px 30px 30px;
+        position: absolute;
+        background-color: transparent;
+        bottom: -100%;
+        color: colors.$color__black;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transition: all 0.4s ease-in-out;
+
+        @media (min-width: breakpoints.$sm) {
+            padding: 30px 30% 30px 30px;
+        }
+
+        &:last-child {
+            transition: all 0.6s ease-in-out;
+        }
+
+        .heading {
+            display: inline-block;
+            background-color: rgba(colors.$color__secondary, 0.95);
+            color: colors.$color__black;
+            font-weight: 700;
+            margin-bottom: 10px;
+            margin-left: -20px;
+            padding: 20px;
+            transition: background-color 0.4s ease-in-out;
+        }
+
+        p {
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul > li::marker {
+            content: url(../img/bullet-black.svg);
+        }
+
+        &.read-more {
+            display: flex;
+            background-color: transparent !important    ;
+            justify-content: stretch;
+            align-items: stretch;
+            padding: 0;
+
+            p {
+                display: flex;
+                height: 100%;
+                width: 100%;
+            }
+
+            a {
+                display: flex;
+                color: colors.$color__black;
+                text-decoration: none;
+                justify-content: flex-end;
+                align-items: flex-end;
+                width: 100%;
+                height: 100%;
+                padding-right: 45px;
+                z-index: 10;
+                padding-bottom: 41px;
+                font-size: 1.2rem;
+
+                &::before {
+                    @include mixins.font-awesome;
+                    content: "\f061";
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 44px;
+                    height: 44px;
+                    background: colors.$color__white;
+                    border-radius: 50%;
+                    position: absolute;
+                    z-index: -1;
+                    right: 30px;
+                    bottom: 30px;
+                }
+            }
+        }
+    }
+
+    &.yellow {
+        &:hover {
+            .block-html {
+                background-color: rgba(colors.$color__tertiary, 0.95);
+
+                .heading {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        .block-html {
+            .heading {
+                background-color: rgba(colors.$color__tertiary, 0.95);
+            }
+        }
+    }
+
+    &.black {
+        &:hover {
+            .block-html {
+                background-color: rgba(colors.$color__black, 0.95);
+
+                .heading {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        .block-html {
+            color: colors.$color__white;
+
+            .heading {
+                background-color: rgba(colors.$color__black, 0.95);
+                color: colors.$color__white;
+            }
+
+            ul > li::marker {
+                content: url(../img/bullet-white.svg);
+            }
+
+            &.read-more {
+                a {
+                    color: colors.$color__white;
+                }
+            }
+        }
+    }
+}

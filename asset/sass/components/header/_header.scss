@@ -1,0 +1,147 @@
+@use "../../abstracts/mixins/mixins";
+@use "../../abstracts/variables/breakpoints";
+@use "../../abstracts/variables/colors";
+
+.main-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    transition: all 0.3s ease-out;
+
+    &__top-bar {
+        background-color: colors.$color__secondary;
+        display: none;
+
+        @media (min-width: breakpoints.$xl) {
+            display: block;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: colors.$color__white;
+
+            @media (min-width: breakpoints.$lg) {
+                align-items: flex-end;
+                justify-content: space-between;
+            }
+
+            a {
+                color: colors.$color__white;
+                text-decoration: none;
+            }
+
+            .top-bar__info {
+                display: flex;
+                gap: 100px;
+                margin-right: 10px;
+
+                .contact_info {
+                    display: flex;
+                    align-items: center;
+
+                    &::before {
+                        @include mixins.font-awesome;
+                        display: inline-block;
+                        font-weight: 600;
+                        font-size: 1.2rem;
+                        margin-right: 10px;
+                    }
+                }
+
+                .contact_info_phone::before {
+                    content: "\f879";
+                }
+
+                .contact_info_email::before {
+                    content: "\f0e0";
+                }
+
+                .contact_info_location::before {
+                    content: "\f3c5";
+                }
+            }
+
+            .top-bar__advanced-search {
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+
+                &::after {
+                    @include mixins.font-awesome;
+                    content: "\f0a9";
+                    display: inline-block;
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                    margin-left: 5px; 
+                }
+            }
+        }
+    }
+
+    
+    hr {
+        background-color: colors.$color__secondary;
+        margin-bottom: 0;
+    }
+
+    &__main-bar {
+        display: flex;
+        background-color: colors.$color__black;
+        align-items: center;
+        border: 15px solid colors.$color__white;
+        border-bottom: none;
+        justify-content: space-between;
+        position: relative;
+        padding: 0 20px;
+        transition: background-color 0.3s ease-out;
+
+        @media (min-width: breakpoints.$xl) {
+            padding: 0 30px;
+        }
+
+        .page-with-hero & {
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        &.solid-bg {
+            background-color: colors.$color__black !important;
+        }
+    }
+
+    &__site-title {
+        flex-shrink: 1;
+        margin: 15px 30px 15px 0;
+        max-width: 80%;
+        order: 0;
+        transition: opacity 0.3s ease-out;
+
+        @media (min-width: breakpoints.$lg) {
+            max-width: 40%;
+            order: initial;
+        }
+
+        a {
+            display: block;
+            font-weight: 600;
+            font-size: 1.2rem;
+            line-height: 1.2;
+        }
+
+        img {
+            max-height: 55px;
+            width: auto;
+
+            @media (min-width: breakpoints.$lg) {
+                max-height: 60px;
+            }
+        }
+        
+    }
+}

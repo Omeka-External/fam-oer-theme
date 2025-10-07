@@ -1,0 +1,83 @@
+/* Assets
+--------------------------------------------- */
+@use "assets/assets";
+
+/* Browse Preview
+--------------------------------------------- */
+@use "browse-preview/browse-preview";
+
+/* Carousel
+--------------------------------------------- */
+@use "carousel/carousel";
+
+/* Collecting
+--------------------------------------------- */
+@use "collecting/collecting";
+
+/* Item With metadata
+--------------------------------------------- */
+@use "item-with-metadata/item-with-metadata";
+
+/* Media Embed
+--------------------------------------------- */
+@use "media-embed/media-embed";
+
+/* Table of contents
+--------------------------------------------- */
+@use "table-of-contents/table-of-contents";
+
+/* List of sites
+--------------------------------------------- */
+@use "list-of-sites/list-of-sites";
+
+/* Mapping
+--------------------------------------------- */
+@use "mapping/mapping";
+
+/* Timeline
+--------------------------------------------- */
+@use "timeline/timeline";
+
+/* Groups
+--------------------------------------------- */
+@use "groups/image-hover-text";
+
+/* HTML
+--------------------------------------------- */
+@use "html/html";
+@use "../../abstracts/variables/breakpoints";
+@use "../../abstracts/variables/colors";
+
+.has-background {
+    padding: 50px;
+
+    &.fullwidth {
+        @media (min-width: breakpoints.$lg) {
+            padding: 90px;
+        }
+    }
+
+    ul > li::marker {
+        content: url(../img/bullet-black.svg);
+    }
+
+    &.black {
+        background-color: colors.$color__black;
+
+        ul > li::marker {
+            content: url(../img/bullet-white.svg);
+        }
+
+        * {
+            color: colors.$color__white;
+        }
+    }
+
+    &.blue {
+        background-color: colors.$color__secondary;
+    }
+
+    &.yellow {
+        background-color: colors.$color__tertiary;
+    }
+}

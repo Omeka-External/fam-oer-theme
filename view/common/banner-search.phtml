@@ -1,0 +1,13 @@
+<?php
+$search_text = $this->themeSetting('search_text');
+?>
+
+<div class="banner-search">
+    <?php if ($search_text) : ?>
+        <p class="banner-search__text">
+            <?php echo $search_text; ?>
+        </p>
+    <?php endif; ?>
+    <?php echo $this->partial('common/search-form'); ?>
+    <a class="banner-search__advanced-search" href="<?php echo $site->url() . '/item/search'; ?>">Advanced Search</a>
+</div>

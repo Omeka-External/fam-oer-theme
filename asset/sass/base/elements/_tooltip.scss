@@ -1,0 +1,50 @@
+@use "../../abstracts/mixins/mixins";
+@use "../../abstracts/variables/colors";
+@use "../../abstracts/variables/typography";
+
+.tooltip {
+    display: inline-block;
+    color: colors.$color__accent;
+    font-size: 1.2rem;
+    line-height: 1;
+    margin-left: 5px;
+    position: relative;
+
+    &::before {
+        @include mixins.font-awesome;
+        content: "\f059";
+        color: colors.$color__accent;
+        font-size: 1.2rem;
+    }
+}
+
+.tooltip .tooltiptext {
+    background-color: colors.$color__light-bg;
+    border-radius: 6px;
+    bottom: 130%;
+    color: colors.$color__black;
+    font-size: typography.$font__xs-size;
+    left: 50%;
+    margin-left: -106px;
+    padding: 12px;
+    position: absolute;
+    text-align: center;
+    visibility: hidden;
+    width: 212px;
+    z-index: 1;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    border-color: colors.$color__light-bg transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px;
+    left: 50%;
+    margin-left: -5px;
+    position: absolute;
+    top: 100%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

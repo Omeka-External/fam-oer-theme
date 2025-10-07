@@ -1,0 +1,18 @@
+@use "../../abstracts/mixins/mixins";
+@use "../../abstracts/variables/colors";
+@use "../../abstracts/variables/typography";
+
+.site-page-pagination {
+    display: flex;
+    border-top: 1px solid colors.$color__hr;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 30px;
+    padding-top: 30px;
+
+    a {
+        @include mixins.secondary-button;
+        font-size: typography.$font__xs-size;
+        padding: 10px 14px;
+    }
+}

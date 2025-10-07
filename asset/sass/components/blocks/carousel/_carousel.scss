@@ -1,0 +1,132 @@
+@use "../../../abstracts/mixins/mixins";
+@use "../../../abstracts/variables/breakpoints";
+@use "../../../abstracts/variables/colors";
+
+.carousel-block {
+    margin: 0 !important;
+    padding-left: 45px;
+    padding-right: 45px;
+
+    .slick-slider {
+        padding: 3rem 0;
+
+        @media(min-width: breakpoints.$md) {
+            padding: 3rem 2rem;
+        }
+    }
+
+    .slick-slide {
+        > div {
+            display: flex;
+        }
+
+        a {
+            color: colors.$color__secondary;
+            text-decoration: none;
+
+            .title {
+                text-decoration: underline;
+            }
+
+            .caption p * {
+                font-style: normal;
+            }
+        }
+
+        .slide-text {
+            background-color: colors.$color__secondary;
+            color: colors.$color__black;
+            font-style: normal;
+            padding: 10px 15px;
+            position: relative;
+            text-align: left;
+            width: 100%;
+
+            .title {
+                font-weight: 500;
+                margin-bottom: 0 !important;
+            }
+
+            .caption {
+                font-style: normal;
+
+                p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .caption-yellow & {
+            .slide-text {
+                background-color: colors.$color__tertiary;
+            }
+        }
+
+        .caption-black & {
+            .slide-text {
+                background-color: colors.$color__black;
+                color: colors.$color__white;
+            }
+        }
+    }
+
+    .slick-arrow {
+        border: 1px solid colors.$color__primary;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+
+        &:hover {
+            background-color: colors.$color__primary;
+
+            .slick-prev-icon,
+            .slick-next-icon {
+                &::before {
+                    color: colors.$color__white;
+                }
+            }
+        }
+
+        &.slick-next {
+            right: -45px;
+        }
+
+        &.slick-prev {
+            left: -45px;
+        }
+
+        .slick-prev-icon,
+        .slick-next-icon {
+            &::before {
+                @include mixins.font-awesome;
+                color: colors.$color__buttons;
+                font-size: 1.2rem;
+                line-height: 1;
+                opacity: 1;
+                transition: color 0.3s ease;
+            }
+        }
+
+        .slick-prev-icon {
+            &::before {
+                content: "\f060";
+            }
+        }
+
+        .slick-next-icon {
+            &::before {
+                content: "\f061";
+            }
+        }
+    }
+
+    .slick-dots {
+        bottom: 0;
+
+        button {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}

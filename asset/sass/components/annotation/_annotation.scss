@@ -1,0 +1,83 @@
+@use "../../abstracts/variables/breakpoints";
+@use "../../abstracts/variables/colors";
+@use "../../abstracts/variables/typography";
+
+.annotation-btn {
+    display: inline-block;
+    padding: 0 5px;
+    position: relative;
+
+    &:hover {
+        .annotation-tooltip {
+            height: auto;
+            opacity: 1;
+            padding: 18px;
+        }
+    }
+
+    .has-annotation {
+        color: colors.$color__primary;
+    }
+
+    .annotation-tooltip {
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        transition: opacity 0.3s ease-out;
+        z-index: 10;
+
+        @media (min-width: breakpoints.$lg) {
+            bottom: 5px;
+        }
+
+        &__wrapper {
+            background-color: colors.$color__light-bg;
+            border: 1px solid colors.$color__hr;
+            border-radius: 10px 10px 10px 0;
+            box-shadow: rgba(colors.$color__black, 0.12) 0 1px 9px 0;
+            font-size: typography.$font__xs-size;
+            width: 230px;
+            height: auto;
+            padding: 15px 15px 30px;
+
+            @media (min-width: breakpoints.$lg) {
+                padding: 15px;
+            }
+
+            &.below-button {
+                border-radius: 0 10px 10px 10px;
+            }
+        }
+
+        &__heading {
+            font-size: typography.$font__sm-size;
+        }
+
+        .property:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        dt {
+            float: left;
+            font-size: typography.$font__xs-size;
+            margin-bottom: 0.5rem;
+            padding-right: 10px;
+            width: 70px !important;
+        }
+
+        dd {
+            font-size: typography.$font__xs-size;
+            margin: 0;
+            margin-left: 70px !important;
+
+            &.resource.media img {
+                display: block;
+                max-width: 80px;
+                border-radius: 10px !important;
+            }
+        }
+    }
+}

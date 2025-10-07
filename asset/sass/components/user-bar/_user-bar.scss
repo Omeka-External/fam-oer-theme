@@ -1,0 +1,63 @@
+@use "../../abstracts/variables/breakpoints";
+
+#user-bar {
+    gap: 15px;
+
+    a {
+        display: block;
+
+        @media(min-width: breakpoints.$lg) {
+            display: initial;
+        }
+    }
+
+    .site-links {
+        width: 60%;
+
+        a {
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: calc(100%);
+
+            @media(min-width: breakpoints.$lg) {
+                overflow: initial;
+                white-space: initial;
+                width: auto;
+            }
+        }
+
+        .admin {
+            &::after {
+                content: none !important;
+
+                @media(min-width: breakpoints.$lg) {
+                    content: ">" !important;
+                }
+            }
+
+            &:last-child::after {
+                content: none !important;
+            }
+        }
+    }
+
+    .user-links {
+        width: 40%;
+        text-align: right;
+
+        .logout {
+            margin-left: 0;
+            margin-top: 15px;
+            padding: 6px 10px;
+            text-decoration: none;
+
+            @media(min-width: breakpoints.$lg) {
+                margin-left: 12px;
+                margin-top: 0;
+                padding: 0 6px;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@use "../../../abstracts/variables/colors";
+
+.block-html {
+    &.text-blue {
+        color: colors.$color__secondary;
+    }
+
+    &.text-red {
+        color: colors.$color__primary;
+    }
+
+    &.text-beige {
+        color: colors.$color__complementary;
+    }
+}

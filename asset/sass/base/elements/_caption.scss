@@ -1,0 +1,6 @@
+@use "../../abstracts/variables/typography";
+
+.caption {
+    font-style: italic;
+    font-size: typography.$font__sm-size;
+}

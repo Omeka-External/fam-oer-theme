@@ -1,0 +1,58 @@
+@use "../../abstracts/mixins/mixins";
+@use "../../abstracts/variables/colors";
+
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    @include mixins.primary-button;
+
+    &.btn--secondary {
+        @include mixins.secondary-button;
+    }
+
+    &.link-style {
+        @include mixins.link-style;
+    }
+
+    &.icon-btn {
+        @include mixins.secondary-button;
+
+        &::after {
+            @include mixins.font-awesome;
+            content: "\f061";
+            margin-left: 10px;
+        }
+    }
+
+    &:focus {
+        outline: 5px auto colors.$color__complementary;
+    }
+}
+
+button.add-value,
+button.remove-value {
+    background-color: colors.$color__white;
+    border: 1px solid colors.$color__hr;
+    border-radius: 50%;
+    cursor: pointer;
+    color: colors.$color__primary;
+    width: 35px;
+    height: 35px;
+    padding: 5px 9px;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    flex-shrink: 0;
+
+    &:hover,
+    &:focus {
+        background-color: colors.$color__primary !important;
+        color: colors.$color__white;
+    }
+}
+
+.button {
+    cursor: pointer;
+}

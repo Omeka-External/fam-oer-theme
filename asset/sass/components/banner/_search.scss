@@ -1,0 +1,69 @@
+@use "../../abstracts/mixins/mixins";
+@use "../../abstracts/variables/breakpoints";
+@use "../../abstracts/variables/colors";
+
+#banner-search {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: rgba(colors.$color__black, 0.6);
+    border-radius: 5px;
+    padding: 20px 20px 20px 0;
+    width: 100%;
+
+    @media (min-width: breakpoints.$lg) {
+        padding: 30px 26px 30px 0;
+        width: 564px;
+    }
+
+    &.visible {
+        display: flex;
+    }
+
+    .main-header-search__text {
+        align-self: flex-start;
+        color: colors.$color__white;
+        margin-bottom: 5px;
+    }
+        
+    form {
+        display: flex;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    input {
+        padding-right: 46px;
+        margin-bottom: 0;
+        margin-right: -46px;
+        width: 100%;
+    }
+
+    button {
+        color: colors.$color__white;
+        padding: 10px 15px;
+        border-radius: 0 5px 5px 0;
+    }
+    
+    .main-header-search__advanced-search {
+        display: flex;
+        align-items: center;
+        color: colors.$color__white;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: colors.$color__white;
+        }
+
+        &::after {
+            @include mixins.font-awesome;
+            content: "\f0a9" !important;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-left: 5px;
+        }
+    }
+}

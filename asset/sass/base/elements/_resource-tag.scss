@@ -1,0 +1,21 @@
+@use "../../abstracts/variables/colors";
+@use "../../abstracts/variables/typography";
+
+.resource-tags {
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+
+    .resource-tag {
+        display: flex;
+        align-items: center;
+        color: colors.$color__black;
+        border-radius: 20px;
+        font-family: typography.$font__headings;
+        font-size: typography.$font__xs-size;
+        font-weight: 500;
+        padding: 3px 10px;
+    }
+}

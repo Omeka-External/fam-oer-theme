@@ -1,0 +1,49 @@
+/*
+Theme Name: FAM - Online Educator Resource
+Theme URI: https://github.com/Omeka-External/fam-oer-theme
+Author: Omeka Team
+Author URI: https://omeka.org/s/
+Description: A Modern Omeka S Theme
+Version: 1.0.0
+Omeka Version Constraint: ^4.1.1
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: fam-oer
+*/
+
+/*--------------------------------------------------------------
+# Variables and mixins
+--------------------------------------------------------------*/
+@use "abstracts/abstracts";
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+@use "generic/normalize";
+
+/* Box sizing
+--------------------------------------------- */
+@use "generic/box-sizing";
+
+/* Collapse
+--------------------------------------------- */
+@use "generic/collapse";
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@use "base/base";
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@use "components/components";
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+@use "utilities/utilities";

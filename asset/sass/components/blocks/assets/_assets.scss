@@ -1,0 +1,87 @@
+@use "../../../abstracts/variables/breakpoints";
+@use "../../../abstracts/variables/colors";
+@use "../../../abstracts/variables/typography";
+
+.block-asset {
+    &.inline {
+        .assets {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            @media(min-width: breakpoints.$md) {
+                flex-direction: row;
+            }
+        }
+    }
+
+    .assets {
+        height: 100%;
+
+        .asset {
+            display: inline-flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            vertical-align: top;
+
+            img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+
+            > a {
+                font-size: 0;
+                height: 100%;
+            }
+
+            .caption {
+                background-color: colors.$color__secondary;
+                color: colors.$color__black;
+                font-style: normal;
+                padding: 20px;
+                position: relative;
+                text-align: left;
+                width: 100%;
+
+                a,
+                .link-title {
+                    color: colors.$color__black;
+                    font-size: typography.$font__base-size;
+                    font-weight: 500;
+
+                    @media(min-width: breakpoints.$md) {
+                        font-size: typography.$font__h5-sm-size;
+                    }
+                }
+
+                ul > li::marker {
+                    content: url(../img/bullet-black.svg);
+                }
+            }
+        }
+    }
+
+    &.caption-yellow {
+        .caption {
+            background-color: colors.$color__tertiary !important;
+        }
+    }
+
+    &.caption-black {
+        .caption {
+            background-color: colors.$color__black !important;
+            color: colors.$color__white !important;
+
+            a,
+            .link-title {
+                color: colors.$color__white !important;
+            }
+
+            ul > li::marker {
+                content: url(../img/bullet-white.svg) !important;
+            }
+        }
+    }
+}

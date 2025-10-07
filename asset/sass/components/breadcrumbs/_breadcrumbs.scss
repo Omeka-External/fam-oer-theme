@@ -1,0 +1,12 @@
+@use "../../abstracts/variables/colors";
+@use "../../abstracts/variables/typography";
+
+.breadcrumbs {
+    display: inline-block;
+    background-color: colors.$color__light-bg;
+    border-radius: 22px;
+    font-size: typography.$font__sm-size;
+    padding: 8px 15px;
+    width: auto;
+    margin-bottom: 15px;
+}

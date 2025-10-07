@@ -1,0 +1,82 @@
+@use "../../abstracts/mixins/mixins";
+@use "../../abstracts/variables/breakpoints";
+@use "../../abstracts/variables/colors";
+@use "../../abstracts/variables/typography";
+
+.pagination {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 30px 0;
+    padding: 30px 0;
+    width: 100%;
+
+    .pager-wrapper {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        gap: 1rem;
+
+        @media (min-width: breakpoints.$sm) {
+            gap: 1.5rem;
+        }
+    }
+
+    input[type=text] {
+        display: inline-block;
+        margin: 0 0 0 0.5rem !important;
+        padding: 12px 10px;
+        text-align: center;
+        width: auto;
+    }
+
+    input[type=submit] {
+        padding: 12px 15px;
+
+        @media (min-width: breakpoints.$sm) {
+            padding: 12px 30px;
+        }
+    }
+
+    .row-count {
+        color: colors.$color__secondary-text;
+        font-size: typography.$font__sm-size;
+        margin-right: 1rem;
+    }
+
+    .pager {
+        label,
+        .page-count {
+            color: colors.$color__secondary-text;
+            margin-right: 0.5rem;
+        }
+    }
+
+    .button {
+        @include mixins.secondary-button;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        font-size: 1rem;
+        height: 40px;
+        justify-content: center;
+        padding: 0;
+        position: relative;
+        width: 40px;
+
+        &:hover:not(.disabled),
+        &:active:not(.disabled) {
+            &::before {
+                color: colors.$color__white;
+            }
+        }
+
+        &.disabled {
+            border-color: colors.$color__disabled;
+            color: colors.$color__disabled;
+            cursor: default;
+        }
+    }
+}

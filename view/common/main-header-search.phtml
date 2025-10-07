@@ -1,0 +1,13 @@
+<?php
+$search_text = $this->themeSetting('search_text');
+?>
+
+<div id="<?php echo $id ?? ''; ?>">
+    <?php if ($search_text) : ?>
+        <p class="main-header-search__text">
+            <?php echo $search_text; ?>
+        </p>
+    <?php endif; ?>
+    <?php echo $this->partial('common/search-form'); ?>
+    <a class="main-header-search__advanced-search" href="<?php echo $site->url() . '/item/search'; ?>">Advanced Search</a>
+</div>

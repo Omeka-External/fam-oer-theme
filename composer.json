@@ -1,0 +1,7 @@
+{
+    "name": "omeka-s-themes/fam-oer",
+    "type": "omeka-s-theme",
+    "require": {
+        "omeka/omeka-s": "*"
+    }
+}

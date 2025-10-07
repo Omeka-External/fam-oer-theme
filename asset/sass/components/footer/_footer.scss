@@ -1,0 +1,277 @@
+@use "../../abstracts/variables/breakpoints";
+@use "../../abstracts/variables/colors";
+
+.main-footer {
+    padding: 0 15px 15px;
+
+    &__container {
+        display: flex;
+        background-color: colors.$color__black;
+        clear: both;
+        color: colors.$color__white;
+        flex-direction: column;
+        font-size: 0.875rem;
+        letter-spacing: 0.5px;
+        overflow: hidden;
+    }
+
+    ul li::marker {
+        content: url('../img/bullet-yellow.svg');
+    }
+
+    .footer_site_info * {
+        color: colors.$color__white;
+        margin-bottom: 0.4rem;
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding-bottom: 30px;
+        padding-top: 50px;
+
+        @media (min-width: breakpoints.$lg) {
+            padding-bottom: 50px;
+            padding-top: 70px;
+        }
+    }
+
+    &__top-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+
+        @media (min-width: breakpoints.$lg) {
+            align-items: flex-start;
+            flex-direction: row;
+            gap: 70px;
+        }
+
+        > div {
+            flex-grow: 1;
+            margin-bottom: 1rem;
+            position: relative;
+            
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+
+        &.no-menu {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            @media (min-width: breakpoints.$lg) {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+            }
+        }
+    }
+
+    &__col1,
+    &__col3 {
+        text-align: center;
+        width: 100%;
+
+        @media (min-width: breakpoints.$lg) {
+            width: 40%;
+        }
+
+        @media (min-width: breakpoints.$lg) {
+            align-items: flex-start;
+            text-align: left;
+        }
+    }
+
+    &__col1 {
+        img {
+            max-width: 400px;
+        }
+    }
+
+    &__col2 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+
+        @media (min-width: breakpoints.$lg) {
+            align-items: initial;
+            width: 20%;
+        }
+
+        .navigation {
+            margin-bottom: 0;
+            margin-left: 0;
+            text-align: left;
+
+            li {
+                &::before {
+                    content: none !important;
+                }
+            }
+
+            > li {
+                > ul { //2do level columns
+                    margin-left: 0;
+                    margin-top: 0.8rem;
+                    list-style: none;
+                    padding-left: 0;
+
+                    li { //2do level links
+                        margin-bottom: 5px;
+
+                        ul {
+                            margin-left: 0;
+                            padding-left: 25px;
+                        }
+                    }
+                }
+            }
+
+            ul {
+                display: none;
+
+                @media (min-width: breakpoints.$lg) {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__col3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        color: colors.$color__white;
+        flex-direction: column;
+        margin-bottom: 36px;
+        
+
+        @media (min-width: breakpoints.$lg) {
+            align-items: flex-start;
+        }
+    }
+
+    &__contact-info {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        @media (min-width: breakpoints.$lg) {
+            display: block;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+
+            .link-icon {
+                font-size: 0;
+                width: 40px;
+            }
+        }
+    }
+
+    &__logos {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        justify-content: center;
+        width: 100%;
+
+        @media (min-width: breakpoints.$sm) {
+            gap: 46px;
+        }
+
+        img {
+            flex: 1 1 auto;
+            max-height: 100px;
+            min-width: 0;
+            object-fit: contain;
+        }
+    }
+
+    &__social-network {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 30px;
+
+        @media (min-width: breakpoints.$lg) {
+            order: 1;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(colors.$color__white, 0.6);
+            border-radius: 50%;
+            height: 51px;
+            justify-content: center;
+            text-decoration: none;
+            width: 51px;
+
+            &:hover {
+                border: 1px solid rgba(colors.$color__white, 1);
+            } 
+        }
+    }
+
+    &__bottom {
+        background-color: colors.$color__black;
+        border-top: 1px solid colors.$color__secondary;
+        padding: 20px 0;
+    }
+
+    &__bottom-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        text-align: center;
+
+        @media (min-width: breakpoints.$lg) {
+            flex-direction: row;
+            text-align: left;
+        }
+
+        &.has-links {
+            justify-content: space-between;
+        }
+
+        a {
+            color: colors.$color__white;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__links {
+        display: flex;
+        gap: 40px;
+    }
+
+    a {
+        color: colors.$color__tertiary;
+        text-decoration: underline;
+    }
+}

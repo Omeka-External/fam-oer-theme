@@ -1,0 +1,116 @@
+@use "../../abstracts/mixins/mixins";
+@use "../../abstracts/variables/breakpoints";
+@use "../../abstracts/variables/colors";
+@use "../../abstracts/variables/typography";
+
+#main-header-search {
+    display: flex;
+    align-items: center;
+    background-color: colors.$color__white;
+    border-bottom: 1px solid colors.$color__tertiary;
+    gap: 10px;
+    justify-content: center;
+    margin: 0 15px;
+    width: calc(100% - 30px);
+    transition: margin-top 0.3s ease-out;
+
+    body.page-with-hero & {
+        display: none;
+    }
+
+    @media (min-width: breakpoints.$md) {
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    @media (min-width: breakpoints.$lg) {
+        gap: 30px;
+        padding: 0 30px;
+    }
+
+    @media (min-width: breakpoints.$xxl) {
+        gap: 40px;
+        padding: 0 40px;
+    }
+
+    &.visible {
+        display: flex;
+    }
+
+    .main-header-search__text {
+        display: none;
+        margin-bottom: 0;
+        min-width: 232px;
+        font-size: typography.$font__sm-size;
+
+        @media (min-width: breakpoints.$md) {
+            display: block;
+        }
+
+        @media (min-width: breakpoints.$xxl) {
+            font-size: typography.$font__base-size;
+        }
+    }
+
+    form {
+        display: flex;
+        width: 100%;
+
+        @media (min-width: breakpoints.$lg) {
+            max-width: 538px;
+        }
+    }
+
+    input {
+        padding: 8px 46px 8px 15px;
+        margin-bottom: 0;
+        margin-right: -46px;
+        width: 100%;
+    }
+
+    button {
+        color: colors.$color__white;
+        padding: 8px 15px;
+        border-radius: 0 5px 5px 0;
+    }
+
+    .main-header-search__advanced-search {
+        display: flex;
+        align-items: center;
+        border-left: 1px solid colors.$color__tertiary;
+        flex-shrink: 0;
+        font-size: typography.$font__sm-size;
+        font-weight: 500;
+        padding: 18px 0 18px 10px;
+        text-decoration: none;
+
+        @media (min-width: breakpoints.$md) {
+            font-size: typography.$font__base-size;
+            font-weight: 600;
+            padding-left: 20px;
+
+            &::after {
+                @include mixins.font-awesome;
+                content: "\f0a9" !important;
+                display: inline-block;
+                font-weight: 600;
+                font-size: 1.2rem;
+                margin-left: 5px;
+            }
+        }
+
+        @media (min-width: breakpoints.$lg) {
+            padding-left: 30px;
+        }
+
+        @media (min-width: breakpoints.$xxl) {
+            padding-left: 40px;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+
+        }
+    }
+}

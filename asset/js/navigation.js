@@ -9,7 +9,6 @@ let mmToggli, mmToggla, mmBody, mmDrawer, mmBacker, mmClones, mmTargets;
 
 document.addEventListener("DOMContentLoaded", function() {
 	const mainHeader = document.querySelector('.main-header');
-	const mainHeaderLogo = document.querySelector('.main-header__site-title');
 	const mainBanner = document.querySelector('.main-banner');
 
 	let collection, container, menu, links, i, len;
@@ -27,14 +26,12 @@ document.addEventListener("DOMContentLoaded", function() {
 					item.addEventListener('mouseenter', function (event) {
 						if (window.scrollY <= 10) {
 							mainHeader.classList.add('solid-bg');
-							mainHeaderLogo.style.opacity = 1;
 						}
 					});
 
 					item.addEventListener('mouseleave', function (event) {
 						if (window.scrollY <= 10) {
 							mainHeader.classList.remove('solid-bg');
-							mainHeaderLogo.style.opacity = 0;
 						}
 					});
 				}
@@ -70,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			if (mainBanner) {
 				if (window.scrollY <= 10) {
 					mainHeader.classList.add('solid-bg');
-					mainHeaderLogo.style.opacity = 1;
 				}
 			}
 			openMenuDrawer();
@@ -78,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			if (mainBanner) {
 				if (window.scrollY <= 10) {
 					mainHeader.classList.remove('solid-bg');
-					mainHeaderLogo.style.opacity = 0;
 				}
 			}
 			closeMenuDrawer();

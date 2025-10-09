@@ -36,9 +36,10 @@
 
     .navigation-controls {
         border-bottom: 1px solid colors.$color__gray-60;
-        background-color: colors.$color__secondary;
+        background-color: colors.$color__black;
         color: colors.$color__white;
         font-size: 1.1rem;
+        margin: 0 15px;
         text-align: left;
 
         a {

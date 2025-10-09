@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function refreshBodyPaddingTop() {
         if (mainBanner) {
-            body.style.paddingTop = userBarHeight;
+            body.style.paddingTop = userBarHeight + 'px';
             //document.documentElement.style.scrollPaddingTop = (userBarHeight + 20) + 'px';
         } else {
             body.style.paddingTop = mainHeader.offsetHeight + 'px';

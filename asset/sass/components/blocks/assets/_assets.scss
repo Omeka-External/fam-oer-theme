@@ -31,6 +31,12 @@
                 width: 100%;
             }
 
+            &.no-cropping {
+                img {
+                    object-fit: contain;
+                }
+            }
+
             > a {
                 font-size: 0;
                 height: 100%;

@@ -46,7 +46,7 @@ $mainContentClass = strpos($page_template, 'page-with-hero') === 0 || strpos($pa
             <?php echo $this->partial('common/banner'); ?>
         <?php endif; ?>
 
-        <div id="main-content" class="<?php echo $escAttr($mainContentClass); ?>" role="main">
+        <div id="content" class="<?php echo $escAttr($mainContentClass); ?>" role="main" tabindex="-1">
             <?php echo $this->content; ?>
         </div>
 

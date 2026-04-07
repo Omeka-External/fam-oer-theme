@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const mainHeaderSearch = document.getElementById('main-header-search')
     const userBar = document.getElementById('user-bar');
     const menuDrawer = document.getElementById('menu-drawer');
-    const mainContent = document.getElementById('main-content');
+    const mainContent = document.getElementById('content');
     const mainFooter = document.querySelector('.main-footer');
 
     // Resize Events
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function() {
         imageHoverTextViewMore.textContent = '';
     });
 
-    // Set Main-content min-height
+    // Set Main content min-height
     function setMainContentMinHeight() {
         mainContent.style.minHeight = `calc(100vh - ${mainHeader.offsetHeight + mainFooter.offsetHeight}px)`;
     }

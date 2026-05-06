@@ -94,8 +94,10 @@
         display: flex;
         background-color: colors.$color__black;
         align-items: center;
-        border: 15px solid colors.$color__white;
         border-bottom: none;
+        border-color: var(--body-bg, #{colors.$color__bg-body});
+        border-style: solid;
+        border-width: 15px;
         justify-content: space-between;
         position: relative;
         padding: 0 20px;

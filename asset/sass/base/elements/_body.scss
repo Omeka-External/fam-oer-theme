@@ -1,5 +1,10 @@
 @use "../../abstracts/variables/colors";
 
 body {
-    background: colors.$color__bg-body; // Fallback for when there is no custom background color defined.
+    background: var(--body-bg, #{colors.$color__bg-body});
+
+    &.bg-yellow       { --body-bg: #{colors.$color__tertiary}; }
+    &.bg-light-yellow { --body-bg: #{colors.$color__tertiary-light}; }
+    &.bg-blue         { --body-bg: #{colors.$color__secondary}; }
+    &.bg-gray         { --body-bg: #{colors.$color__gray-95}; }
 }

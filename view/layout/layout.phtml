@@ -22,9 +22,9 @@ if ($userBar) {
     $this->htmlElement('body')->appendAttribute('class', 'user-bar');
 }
 
-$page_template = isset($page) ? $page->layoutDataValue('template_name') : '';
+$pageTemplate = isset($page) ? $page->layoutDataValue('template_name') : '';
 
-$mainContentClass = strpos($page_template, 'page-with-hero') === 0 || strpos($page_template, 'full-width') === 0 ? 'fullwidth-container' : 'container';
+$mainContentClass = strpos($pageTemplate, 'page-with-hero') === 0 || strpos($pageTemplate, 'full-width') === 0 ? 'fullwidth-container' : 'container';
 ?>
 
 <?php echo $this->doctype(); ?>
@@ -40,9 +40,9 @@ $mainContentClass = strpos($page_template, 'page-with-hero') === 0 || strpos($pa
     <?php echo $this->htmlElement('body'); ?>
         <a id="skipnav" href="#content"><?php echo $this->translate('Skip to main content'); ?></a>
 
-        <?php echo $this->partial('common/header', ['userBar' => $userBar, 'site' => $site]); ?>
+        <?php echo $this->partial('common/header', ['userBar' => $userBar, 'site' => $site, 'pageTemplate' => $pageTemplate]); ?>
 
-        <?php if (strpos($page_template, 'page-with-hero') === 0): ?>
+        <?php if (strpos($pageTemplate, 'page-with-hero') === 0): ?>
             <?php echo $this->partial('common/banner'); ?>
         <?php endif; ?>
 
@@ -50,7 +50,10 @@ $mainContentClass = strpos($page_template, 'page-with-hero') === 0 || strpos($pa
             <?php echo $this->content; ?>
         </div>
 
-        <?php echo $this->partial('common/footer'); ?>
+        <?php if ($pageTemplate !== 'no-top-nav-no-footer'): ?>
+            <?php echo $this->partial('common/footer'); ?>
+        <?php endif; ?>
+        
         <?php echo $this->partial('common/menu-drawer'); ?>
 
         <?php

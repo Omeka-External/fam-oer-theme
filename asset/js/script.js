@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const mainContent = document.getElementById('content');
     const mainFooter = document.querySelector('.main-footer');
 
+    // Custom body background colors
+    const hexBgMatch = body.className.match(/\bbg-([0-9a-fA-F]{6})\b/);
+    if (hexBgMatch) body.style.setProperty('--body-bg', `#${hexBgMatch[1]}`);
+
     // Resize Events
 
     let userBarHeight = 0;

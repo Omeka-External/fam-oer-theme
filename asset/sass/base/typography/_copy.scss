@@ -17,6 +17,7 @@ i {
 blockquote {
     display: flex;
     background-color: colors.$color__tertiary-light;
+    flex-direction: column;
     font-style: italic;
     padding: 20px 25px 20px 60px;
     position: relative;
@@ -35,11 +36,6 @@ blockquote {
         position: absolute;
         top: 10px;
         line-height: 1;
-    }
-
-    &::after {
-        opacity: 0;
-        content: close-quote;
     }
 
     a[rel="footnote"] {

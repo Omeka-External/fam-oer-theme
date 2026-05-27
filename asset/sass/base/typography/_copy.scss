@@ -38,6 +38,12 @@ blockquote {
         line-height: 1;
     }
 
+    &::after {
+        content: close-quote;
+        line-height: 0;
+        opacity: 0;
+    }
+
     a[rel="footnote"] {
         font-style: initial;
     }

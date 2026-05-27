@@ -15,6 +15,7 @@
     background-color: colors.$color__menu-drawer;
     overflow-x: hidden;
     transition: all 0.3s ease-out;
+    visibility: hidden;
 
     @media screen and (min-width: breakpoints.$xl) {
         transform: translateX( -100% ) !important;
@@ -32,6 +33,7 @@
 
     &.toggled {
         transform: translateX( 0 );
+        visibility: visible;
     }
 
     .navigation-controls {

@@ -28,7 +28,7 @@ $mainContentClass = strpos($pageTemplate, 'page-with-hero') === 0 || strpos($pag
 ?>
 
 <?php echo $this->doctype(); ?>
-<?php echo $this->htmlElement('html'); ?>
+<?php echo $this->htmlElement('html')->setAttribute('lang', $this->lang()); ?>
     <head>
         <?php echo $this->headMeta(); ?>
         <?php echo $this->headTitle(); ?>
@@ -53,8 +53,6 @@ $mainContentClass = strpos($pageTemplate, 'page-with-hero') === 0 || strpos($pag
         <?php if ($pageTemplate !== 'no-top-nav-no-footer'): ?>
             <?php echo $this->partial('common/footer'); ?>
         <?php endif; ?>
-        
-        <?php echo $this->partial('common/menu-drawer'); ?>
 
         <?php
         echo $this->inlineScript()

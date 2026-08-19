@@ -155,6 +155,8 @@
                 }
 
                 .numeric-timestamp {
+                    gap: 0;
+
                     @media (min-width: breakpoints.$md) {
                         flex: 1 1 350px !important;
                     }
@@ -169,6 +171,8 @@
                 }
 
                 .numeric-duration {
+                    gap: 0;
+
                     @media (min-width: breakpoints.$md) {
                         flex: 1 1 330px !important;
                     }

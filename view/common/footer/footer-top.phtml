@@ -6,6 +6,7 @@ $escUrl  = $this->plugin('escapeUrl');
 $footerSiteInfo  = $this->themeSetting('footer_site_info');
 $footerMenuTitle = $this->themeSetting('footer_menu_title');
 $footerLogos     = $this->themeSetting('footer_logos');
+$footerLogosUrl  = $this->themeSetting('footer_logos_url');
 $socialNetworks  = array('facebook', 'twitter', 'linkedin', 'instagram', 'youtube', 'mastodon');
 
 $hasSocialNetworks = false;
@@ -50,9 +51,15 @@ foreach ($socialNetworks as $social_network) {
                     $asset = $this->themeSettingAsset('footer_logos');
                     $alt = $asset->altText() ?? $site->title();
                     ?>
-                    <img
-                        src="<?php echo $this->themeSettingAssetUrl('footer_logos'); ?>"
-                        alt="<?php echo $this->escapeHtml($alt); ?>" />
+                    <?php if ($footerLogosUrl) : ?>
+                        <a target="_blank" href="<?php echo $escAttr($footerLogosUrl); ?>">
+                    <?php endif; ?>
+                        <img
+                            src="<?php echo $this->themeSettingAssetUrl('footer_logos'); ?>"
+                            alt="<?php echo $escAttr($alt); ?>" />
+                    <?php if ($footerLogosUrl) : ?>
+                        </a>
+                    <?php endif; ?>
                 <?php endif; ?>
             </div>
 

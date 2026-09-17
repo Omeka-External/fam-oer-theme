@@ -35,6 +35,16 @@ $mainContentClass = strpos($pageTemplate, 'page-with-hero') === 0 || strpos($pag
         <?php echo $this->headLink(); ?>
         <?php echo $this->headStyle(); ?>
         <?php echo $this->headScript(); ?>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-B0F4NNMLDZ"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-B0F4NNMLDZ');
+        </script>
     </head>
 
     <?php echo $this->htmlElement('body'); ?>
